@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# 🚀 React Development Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a mi portafolio de desarrollo con React!
 
-Currently, two official plugins are available:
+Este repositorio agrupa una colección de aplicaciones progresivas que documentan mi trayectoria de aprendizaje y dominio de React, desde los fundamentos hasta arquitecturas Full Stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Aquí encontrarás implementaciones prácticas de **Hooks**, estrategias de **navegación (Router)**, gestión de estado con **Redux/Context**, y la integración con backends robustos usando **NestJS** y bases de datos en la nube. Cada proyecto está desplegado y cuenta con su propia demo en vivo.
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 📂 Índice de Proyectos
 
-## Expanding the ESLint configuration
+1.  04-Hooks App: Profundizando en la lógica de React
+2.  05-Heroes App: SPA con Rutas y Protección
+3.  07-Teslo Shop: E-commerce Full Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🎣 04-Hooks App: Profundizando en la lógica de React
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Una aplicación diseñada para dominar el uso de los Hooks estándar de React y la creación de Custom Hooks.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* **Demo en vivo:** [https://react-hooks-app-ochre.vercel.app/](https://react-hooks-app-ochre.vercel.app/)
+* **Tecnologías:** React, Vite, Bootstrap.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Características Clave:**
+* **useState & useEffect:** Ejemplos complejos de gestión de estado y efectos secundarios.
+* **useContext:** Implementación de un sistema de login simple para gestión de estado global.
+* **useReducer:** Gestión de estados complejos (ej: lista de tareas TODO).
+* **Custom Hooks:** Creación de hooks reutilizables para formularios (`useForm`), peticiones HTTP (`useFetch`) y contadores (`useCounter`).
+* **Optimizaciones:** Uso de `useMemo` y `useCallback` para mejorar el rendimiento y evitar renderizados innecesarios.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🦸‍♂️ 05-Heroes App: SPA con Rutas y Protección
+
+Una Single Page Application (SPA) completa que simula una enciclopedia de superhéroes de DC y Marvel. Este proyecto marca la transición hacia aplicaciones más estructuradas.
+
+* **Frontend Demo:** [https://05-heroes-app.vercel.app/](https://05-heroes-app.vercel.app/)
+* **Backend API:** [https://react-heroes-backend-br1b.onrender.com](https://react-heroes-backend-br1b.onrender.com)
+
+**Arquitectura y Funcionalidades:**
+* **React Router DOM v6:** Manejo avanzado de rutas, parámetros por URL y redirecciones.
+* **Rutas Privadas y Públicas:** Sistema de protección de rutas que impide el acceso a usuarios no autenticados y mantiene el historial de navegación.
+* **Búsqueda:** Implementación de Query Parameters para filtrar héroes.
+* **Diseño:** UI moderna y responsiva utilizando librerías de componentes.
+
+**Backend (Proyecto 06):**
+Para dar soporte real a esta aplicación, se desarrolló un backend dedicado en **NestJS** alojado en Render, que provee la información de los héroes mediante una API RESTful.
+
+---
+
+## 🛒 07-Teslo Shop: E-commerce Full Stack
+
+El proyecto más ambicioso del portafolio: una tienda en línea completa con autenticación, base de datos real y gestión de productos. Se ha migrado de una arquitectura local a una arquitectura **Cloud Native**.
+
+### 🏗 Arquitectura del Despliegue
+
+La aplicación se ha dividido en tres servicios conectados entre sí:
+
+1.  **Frontend (React + Vite):** Alojado en **Vercel**.
+2.  **Backend (NestJS):** Alojado en **Render**.
+3.  **Base de Datos (PostgreSQL):** Alojada en **Neon Tech**.
+
+### 1. Base de Datos (Neon) 🐘
+* **Motor:** PostgreSQL 14.
+* **Seguridad:** Conexión forzada mediante SSL (`sslmode=require`).
+* **Datos:** Poblados mediante el endpoint de SEED del backend una vez desplegado.
+
+### 2. Backend - API Rest (Render) ⚙️
+El backend (`/backend-teslo-shop`) se despliega como un *Web Service* en Render.
+
+* **Build Command:** `yarn install && yarn run build`
+* **Start Command:** `yarn start:dev` (Ejecuta la versión compilada en producción).
+* **Configuración SSL:** Se ajustó la configuración de TypeORM en `app.module.ts` para aceptar certificados SSL de Neon cuando el entorno es `prod`.
+
+### 3. Frontend - Cliente Web (Vercel) 🛍️
+El cliente web (`/teslo-shop`) se despliega en la red Edge de Vercel.
+
+* **Root Directory:** `07-teslo-shop/teslo-shop`.
+
+---
+
+### 📝 Notas Generales de Despliegue
+
+* **Cold Starts:** Los servicios backend alojados en el plan gratuito de Render pueden entrar en suspensión tras 15 minutos de inactividad. La primera petición puede tardar hasta 60 segundos en responder.
+* **CI/CD:** Todos los proyectos cuentan con despliegue continuo (Continuous Deployment) conectado al repositorio de GitHub.

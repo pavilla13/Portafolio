@@ -1,0 +1,53 @@
+.home-container {
+  padding: 2rem 4rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.home-header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  line-height: 1.1;
+}
+
+.home-subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  max-width: 900px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.cold-start-note {
+  margin-top: 1.5rem;
+  border-left: 4px solid #61dafb;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #a0f0ff;
+  background: rgba(97, 218, 251, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  padding-bottom: 4rem;
+}

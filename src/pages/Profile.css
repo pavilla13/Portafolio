@@ -1,0 +1,246 @@
+/* src/pages/Profile.css */
+
+.profile-container {
+  padding: 2rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* --- HEADER --- */
+.profile-header {
+  margin-bottom: 4rem;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
+  border-radius: 2rem;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.image-wrapper {
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #61dafb;
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.3);
+}
+
+.profile-name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.profile-role {
+  font-size: 1.5rem;
+  color: #94a3b8;
+  margin: 0.5rem 0 1.5rem 0;
+  font-weight: 500;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  color: #cbd5e1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.contact-item.link:hover {
+  color: #61dafb;
+  text-decoration: underline;
+}
+
+.btn-download {
+  background-color: #61dafb;
+  color: #0f172a;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 150px;
+  transition: transform 0.2s, background-color 0.2s;
+  text-decoration: none;
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  background-color: #38bdf8;
+}
+
+/* --- GRID LAYOUT --- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+/* --- TARJETAS COMUNES --- */
+.info-card {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.card-icon {
+  color: #0f172a;
+  width: 28px;
+  height: 28px;
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 800;
+  margin: 0;
+}
+
+.info-card p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* --- SECCIONES ESPECÍFICAS --- */
+.about-section {
+  grid-column: span 8;
+}
+
+.skills-section {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+/* --- SKILLS BADGES --- */
+.skills-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  margin: 1.5rem 0 0.8rem 0;
+}
+
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+}
+
+.badge--highlight {
+  background-color: #0f172a;
+  color: #61dafb;
+}
+
+/* --- TIMELINE (Educación) --- */
+.timeline-item {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid #e2e8f0;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin: 0;
+  font-weight: 700;
+}
+
+.timeline-school {
+  color: #0f172a;
+  font-weight: 500;
+  margin: 0.2rem 0;
+}
+
+.timeline-detail {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* --- LANGUAGES --- */
+.languages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.languages-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.languages-list li:last-child {
+  border-bottom: none;
+}
+
+.lang-name {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.lang-level {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.lang-level.highlight {
+  color: #0f172a;
+  background-color: #e0f2fe;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
